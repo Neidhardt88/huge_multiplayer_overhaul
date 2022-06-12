@@ -38,6 +38,7 @@ heavy_cavalry_traditions = { # tradition for Heavy Cavalry
 						country_culture_group = iberia
 						country_culture_group = bactrian
 						country_culture_group = scythia
+						country_culture_group = scythian_east
 						country_culture_group = caucasian
 						country_culture_group = hellenic
 						country_culture_group = persia
@@ -60,6 +61,7 @@ heavy_cavalry_traditions = { # tradition for Heavy Cavalry
 								this.culture.culture_group = culture_group:iberia
 								this.culture.culture_group = culture_group:bactrian
 								this.culture.culture_group = culture_group:scythia
+								this.culture.culture_group = culture_group:scythian_east
 								this.culture.culture_group = culture_group:caucasian
 								this.culture.culture_group = culture_group:hellenic
 								this.culture.culture_group = culture_group:persia
@@ -76,6 +78,191 @@ heavy_cavalry_traditions = { # tradition for Heavy Cavalry
 			}
 		}
 	}
+	
+	
+	iranian_path_11 = { #
+		modifier = { 
+			heavy_cavalry_offensive = 0.05
+			heavy_cavalry_desert_combat_bonus = 0.05
+			army_maintenance_cost = 0.01
+		}
+		icon = persian_scythian_path_5
+		requires = { }
+		allow = {
+			trigger_if = {
+				limit = { country_culture_group = persia }
+				custom_tooltip = {
+					text = "began_with_tradition_group"
+				}
+				country_culture_group = persia
+			}
+		
+			trigger_else = {
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_cultural_decision"
+					has_variable = persian_influence
+				}
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_persian"
+					any_country_culture = {
+						is_integrated = yes
+						country_culture_pop_count >= percent_size_culture_group_comparison
+						OR = {
+							this.culture.culture_group = culture_group:persia
+						}
+					}
+				}
+			}
+		}
+	}
+
+	iranian_path_15 = { #
+		on_activate = {
+			custom_tooltip = "create_high_martial_rising_star"
+			hidden_effect = {
+				create_character = {
+					add_martial = 8
+					add_trait = conqueror
+				}
+			}
+		}
+		modifier = { 
+			heavy_cavalry_defensive = 0.05
+			army_maintenance_cost = 0.01
+		}
+		icon = persian_scythian_path_3
+		requires = { iranian_path_11 }
+		allow = {
+			trigger_if = {
+				limit = { country_culture_group = persia }
+				custom_tooltip = {
+					text = "began_with_tradition_group"
+				}
+				country_culture_group = persia
+			}
+		
+			trigger_else = {
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_cultural_decision"
+					has_variable = persian_influence
+				}
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_persian"
+					any_country_culture = {
+						is_integrated = yes
+						country_culture_pop_count >= percent_size_culture_group_comparison
+						OR = {
+							this.culture.culture_group = culture_group:persia
+						}
+					}
+				}
+			}
+		}
+	}
+
+	assyrian_path_2 = { ###
+		modifier = {
+			heavy_cavalry_cost = -0.05
+			army_maintenance_cost = 0.01
+		} 
+		icon = north_african_tribal_path_7
+		requires = { }
+		allow = {
+			trigger_if = {
+				limit = { country_culture_group = east_levantine }
+				custom_tooltip = {
+					text = "began_with_tradition_group"
+				}
+				country_culture_group = east_levantine
+			}
+			trigger_else = {
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_cultural_decision"
+					has_variable = mesopotamian_influence
+				}
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_east_levantine"
+					any_country_culture = {
+						is_integrated = yes
+						country_culture_pop_count >= percent_size_culture_group_comparison
+						OR = {
+							this.culture.culture_group = culture_group:east_levantine
+						}
+					}
+				}
+			}
+		}
+	}
+
+	assyrian_path_3 = { ###
+		modifier = { 
+			heavy_cavalry_discipline = 0.05
+			army_maintenance_cost = 0.01
+		} 
+		icon = persian_scythian_path_4
+		requires = { assyrian_path_2 }
+		allow = {
+			trigger_if = {
+				limit = { country_culture_group = east_levantine }
+				custom_tooltip = {
+					text = "began_with_tradition_group"
+				}
+				country_culture_group = east_levantine
+			}
+			trigger_else = {
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_cultural_decision"
+					has_variable = mesopotamian_influence
+				}
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_east_levantine"
+					any_country_culture = {
+						is_integrated = yes
+						country_culture_pop_count >= percent_size_culture_group_comparison
+						OR = {
+							this.culture.culture_group = culture_group:east_levantine
+						}
+					}
+				}
+			}
+		}
+	}
+
+	assyrian_path_8 = { ###
+		modifier = { 
+			heavy_cavalry_morale = 0.05
+			army_maintenance_cost = 0.01
+		} 
+		icon = levantine_arabian_path_end_bonus
+		requires = { assyrian_path_3 and iranian_path_11}
+		allow = {
+			trigger_if = {
+				limit = { country_culture_group = east_levantine }
+				custom_tooltip = {
+					text = "began_with_tradition_group"
+				}
+				country_culture_group = east_levantine
+			}
+			trigger_else = {
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_cultural_decision"
+					has_variable = mesopotamian_influence
+				}
+				custom_tooltip = {
+					text = "tradition_unlock_requirement_east_levantine"
+					any_country_culture = {
+						is_integrated = yes
+						country_culture_pop_count >= percent_size_culture_group_comparison
+						OR = {
+							this.culture.culture_group = culture_group:east_levantine
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
 	
 	heavy_cavalry_path_1 = { ###
 		modifier = { 
@@ -326,191 +513,6 @@ heavy_cavalry_traditions = { # tradition for Heavy Cavalry
 		}
 	}
 
-	
-
-	
-
-	iranian_path_11 = { #
-		modifier = { 
-			heavy_cavalry_offensive = 0.05
-			heavy_cavalry_desert_combat_bonus = 0.05
-			army_maintenance_cost = 0.01
-		}
-		icon = persian_scythian_path_5
-		requires = { }
-		allow = {
-			trigger_if = {
-				limit = { country_culture_group = persia }
-				custom_tooltip = {
-					text = "began_with_tradition_group"
-				}
-				country_culture_group = persia
-			}
-		
-			trigger_else = {
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_cultural_decision"
-					has_variable = persian_influence
-				}
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_persian"
-					any_country_culture = {
-						is_integrated = yes
-						country_culture_pop_count >= percent_size_culture_group_comparison
-						OR = {
-							this.culture.culture_group = culture_group:persia
-						}
-					}
-				}
-			}
-		}
-	}
-
-	iranian_path_15 = { #
-		on_activate = {
-			custom_tooltip = "create_high_martial_rising_star"
-			hidden_effect = {
-				create_character = {
-					add_martial = 8
-					add_trait = conqueror
-				}
-			}
-		}
-		modifier = { 
-			heavy_cavalry_defensive = 0.05
-			army_maintenance_cost = 0.01
-		}
-		icon = persian_scythian_path_3
-		requires = { iranian_path_11 }
-		allow = {
-			trigger_if = {
-				limit = { country_culture_group = persia }
-				custom_tooltip = {
-					text = "began_with_tradition_group"
-				}
-				country_culture_group = persia
-			}
-		
-			trigger_else = {
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_cultural_decision"
-					has_variable = persian_influence
-				}
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_persian"
-					any_country_culture = {
-						is_integrated = yes
-						country_culture_pop_count >= percent_size_culture_group_comparison
-						OR = {
-							this.culture.culture_group = culture_group:persia
-						}
-					}
-				}
-			}
-		}
-	}
-
-	assyrian_path_2 = { ###
-		modifier = {
-			heavy_cavalry_cost = -0.05
-			army_maintenance_cost = 0.01
-		} 
-		icon = north_african_tribal_path_7
-		requires = { }
-		allow = {
-			trigger_if = {
-				limit = { country_culture_group = east_levantine }
-				custom_tooltip = {
-					text = "began_with_tradition_group"
-				}
-				country_culture_group = east_levantine
-			}
-			trigger_else = {
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_cultural_decision"
-					has_variable = mesopotamian_influence
-				}
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_east_levantine"
-					any_country_culture = {
-						is_integrated = yes
-						country_culture_pop_count >= percent_size_culture_group_comparison
-						OR = {
-							this.culture.culture_group = culture_group:east_levantine
-						}
-					}
-				}
-			}
-		}
-	}
-
-	assyrian_path_3 = { ###
-		modifier = { 
-			heavy_cavalry_discipline = 0.05
-			army_maintenance_cost = 0.01
-		} 
-		icon = persian_scythian_path_4
-		requires = { assyrian_path_2 }
-		allow = {
-			trigger_if = {
-				limit = { country_culture_group = east_levantine }
-				custom_tooltip = {
-					text = "began_with_tradition_group"
-				}
-				country_culture_group = east_levantine
-			}
-			trigger_else = {
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_cultural_decision"
-					has_variable = mesopotamian_influence
-				}
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_east_levantine"
-					any_country_culture = {
-						is_integrated = yes
-						country_culture_pop_count >= percent_size_culture_group_comparison
-						OR = {
-							this.culture.culture_group = culture_group:east_levantine
-						}
-					}
-				}
-			}
-		}
-	}
-
-	assyrian_path_8 = { ###
-		modifier = { 
-			heavy_cavalry_morale = 0.05
-			army_maintenance_cost = 0.01
-		} 
-		icon = levantine_arabian_path_end_bonus
-		requires = { assyrian_path_3 and iranian_path_11}
-		allow = {
-			trigger_if = {
-				limit = { country_culture_group = east_levantine }
-				custom_tooltip = {
-					text = "began_with_tradition_group"
-				}
-				country_culture_group = east_levantine
-			}
-			trigger_else = {
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_cultural_decision"
-					has_variable = mesopotamian_influence
-				}
-				custom_tooltip = {
-					text = "tradition_unlock_requirement_east_levantine"
-					any_country_culture = {
-						is_integrated = yes
-						country_culture_pop_count >= percent_size_culture_group_comparison
-						OR = {
-							this.culture.culture_group = culture_group:east_levantine
-						}
-					}
-				}
-			}
-		}
-	}
 
 	scythian_path_3 = { ###
 		on_activate = {
@@ -906,7 +908,7 @@ heavy_cavalry_traditions = { # tradition for Heavy Cavalry
 
 	celtic_north_african_enable = { ###Celtic 4BB
 		modifier = { 
-			heavy_cavalry_cost = -0.1
+			heavy_cavalry_cost = -0.05
 			army_maintenance_cost = 0.01
 		}
 		icon = north_african_tribal_path_3
