@@ -17,3 +17,7 @@
   gallic_smithy_desc:0 "You can send a request to a master smith. He will forge an item for you, for an appropriate price. Sometimes, he will work together with another craftsman."
   gallic_smithy.tt:0 "You can send for the master smith only once every five years."
 
+ form_fezzan:0 "Form Fezzan"
+ FEZZAN:0 "Fezzan"
+ FEZZAN_ADJ:0 "Fezzani"
+
