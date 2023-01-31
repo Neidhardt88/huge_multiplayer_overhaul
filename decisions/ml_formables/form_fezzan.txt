@@ -1,0 +1,69 @@
+﻿country_decisions = {
+	
+	# Form Fezzan
+	form_fezzan = {
+		
+		potential = {
+			num_of_cities >= 1
+			country_culture_group = fezzani
+			capital_scope = {
+				is_in_region = fezzan_region
+			}
+			NOT = {
+				tag = FEZ
+			}
+			NOT = {
+				is_endgame_tag_trigger = yes
+			}
+			OR = {
+				is_ai = no
+				num_of_cities >= 100
+			}
+		}
+		
+		highlight = {
+			scope:province = {
+				is_in_region = fezzan_region
+			}
+		}
+		
+		allow = {
+			custom_tooltip = {
+				text = formable_not_iberia_exists
+				NOT = {
+					any_country = {
+						tag = FEZ
+					}
+				}
+			}
+			can_form_nation_trigger = yes
+			owns_region = fezzan_region
+		}
+		
+		effect = {
+			custom_tooltip = "tier_3_formable_tooltip"
+			change_country_name = FEZZAN
+            hidden_effect = {
+                # change_country_flag = 
+                change_country_adjective = FEZZAN_ADJ
+                # change_country_color = light_gold
+                change_country_tag = FEZ
+            }
+			capital_scope = {
+				capital_formable_large_effect = yes
+				formable_capital_modifier_large_effect = yes
+			}
+			add_country_modifier = {
+				name = formable_country_huge_modifier
+				duration = 7600
+			}
+			add_5_free_province_investments = yes
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+} 
+
