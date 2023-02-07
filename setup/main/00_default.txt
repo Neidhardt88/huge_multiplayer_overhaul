@@ -6943,7 +6943,7 @@ country = {
 			capital = 2093
 
 			own_control_core = 	{
-				2093
+				2093 2094
 			}
 		}
 		DEM = {
@@ -6955,7 +6955,7 @@ country = {
 			capital = 2096
 
 			own_control_core = 	{
-				2094 2095 2096 2097 2099
+			  2095 2096 2097 2099
 			}
 		}
 		
