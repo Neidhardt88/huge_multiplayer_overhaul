@@ -201,8 +201,8 @@
 
 2233={ #Noviomagus Aquitanum
 	terrain="marsh"
-	culture="biturigan"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="fish"
 	civilization_value=7
 	barbarian_power=0
@@ -252,17 +252,23 @@
 
 2236={ #Burdigala
 	terrain="marsh"
-	culture="biturigan"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="wine"
 	civilization_value=7
 	barbarian_power=0
 	province_rank="settlement"
-	freemen={
+	nobles={
 		amount=1
 	}
-	tribesmen={
+	citizen={
+		amount=3
+	}
+	freemen={
 		amount=4
+	}
+	tribesmen={
+		amount=1
 	}
 	port_building=1
 }

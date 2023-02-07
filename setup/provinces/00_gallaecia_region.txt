@@ -631,17 +631,23 @@
 
 1133={ #Varrinia
 	terrain="plains"
-	culture="callaecian"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="fish"
 	civilization_value=11
 	barbarian_power=0
 	province_rank="settlement"
-	freemen={
+	nobles={
+		amount=3
+	}
+	citizen={
 		amount=1
 	}
+	freemen={
+		amount=2
+	}
 	tribesmen={
-		amount=4
+		amount=1
 	}
 }
 

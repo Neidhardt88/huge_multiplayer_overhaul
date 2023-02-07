@@ -959,8 +959,8 @@
 
 1316={ #Eburobrittium
 	terrain="plains"
-	culture="oppidanian"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="salt"
 	civilization_value=11
 	barbarian_power=0
@@ -975,17 +975,17 @@
 
 1317={ #Arabriga
 	terrain="plains"
-	culture="oppidanian"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="base_metals"
 	civilization_value=11
 	barbarian_power=0
 	province_rank="settlement"
 	freemen={
-		amount=1
+		amount=3
 	}
 	tribesmen={
-		amount=3
+		amount=1
 	}
 }
 
@@ -1008,20 +1008,23 @@
 
 1319={ #Olisipo
 	terrain="plains"
-	culture="celtician"
-	religion="druidism"
+	culture="carthaginian"
+	religion="carthaginian_pantheon"
 	trade_goods="fish"
 	civilization_value=11
 	barbarian_power=0
 	province_rank="settlement"
+	nobles={ 
+		amount=2
+	}
 	citizen={
-		amount=1
+		amount=3
 	}
 	freemen={
 		amount=2
 	}
 	tribesmen={
-		amount=6
+		amount=2
 	}
 	port_building=1
 }
